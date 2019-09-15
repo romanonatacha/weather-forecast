@@ -17,6 +17,11 @@
         &:focus {
             outline: none;
         }
+
+        &:-internal-autofill-selected {
+            background-color: transparent;
+            color: white;
+        }
     
     }
 
