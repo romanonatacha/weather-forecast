@@ -1,7 +1,63 @@
+@import '../../variables.scss';
+
 .weather {
     color: white;
-}
 
-div:empty {
-    display: none;
+    &__date {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    &__forecast {
+        background: $second-color;
+        color: white;
+        margin-bottom: 0;
+        padding: 10px;
+    }
+
+    &__city {
+        margin: 0;
+    }
+
+    &__icon {
+        padding: 8px;
+    }
+
+    .BrainhubCarousel {
+        align-items: inherit;
+
+        &__arrows {
+            background-color: transparent;
+
+            &:hover {
+                background-color: transparent;
+                transform: scale(1.5);
+            }
+        }
+    }
+
+    .fa-caret-down {
+        color: $second-color;
+        font-size: 50px;
+        margin-top: -20px;
+        margin-bottom: $gutter;
+    }
+    p {
+        margin-top: 0;
+        font-size: 16px;
+    }
+
+    &__temp {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    &__desc {
+        margin-bottom: 8px;
+    }
+
+    .bold_data {
+        font-weight: bold;
+        font-size: 20px;
+
+    }
 }

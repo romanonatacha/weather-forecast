@@ -19,7 +19,7 @@
         }
 
         &:-internal-autofill-selected {
-            background-color: transparent;
+            background-color: transparent !important;
             color: white;
         }
     
@@ -35,6 +35,10 @@
 
         &:hover {
             transform: scale(1.5);
+        }
+
+        &:focus {
+            outline: none;
         }
     }
 }
