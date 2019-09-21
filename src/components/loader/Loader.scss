@@ -1,9 +1,15 @@
+@import '../../variables.scss';
+
 .lds-ripple {
     display: inline-block;
     position: relative;
     width: 64px;
     height: 64px;
     margin-top: 180px;
+
+    @include tablet-mobile {
+      margin: ($gutter * 2) 0;
+    }
   }
   .lds-ripple div {
     position: absolute;

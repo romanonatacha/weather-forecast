@@ -34,7 +34,7 @@ export default class Weather extends Component {
 
               <div>
                 <h4 className="weather__forecast">hourly extended forecast</h4>
-                <i class="fa fa-caret-down"></i>
+                <i className="fa fa-caret-down"></i>
                 <Carousel arrows infinite>
                   
                   {this.props.dataList.map((item, index) => {

@@ -13,7 +13,7 @@ export default class App extends Component {
     dataList: [],
     error: undefined,
     errorTip: undefined,
-    loading: true
+    loading: false
 }
 
 getWeather = async (e) => {
@@ -61,7 +61,7 @@ getWeather = async (e) => {
     return (
       <div className="App">
         <div className="App__column banner">
-          <h1 className="App__column__title">Weather Forecast</h1>
+          <h1 className="App__column__title">Weather<br></br>Forecast</h1>
         </div>
         <div className="App__column content">
           <Search

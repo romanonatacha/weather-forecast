@@ -9,34 +9,45 @@
   width: 70%;
   margin: ($gutter * 8) auto;
 
+  @include tablet-mobile {
+    width: 90%;
+  }
+
   &__column {
-    width: 50%;
     height: 630px;
-    float: left;
+
+    @include for-tablet-landscape-up {
+      
+      width: 50%;
+      float: left;
+    }
 
     &.banner {
       background: url('../../images/weather.gif') no-repeat center;
+
+      @include tablet-mobile {
+        background: url('../../images/clouds.gif') no-repeat center;
+        height: 200px;
+      }
     }
 
     &.content {
       background-color: $main-gray;
-      padding: 0 $gutter * 4;
+      padding: 0 ($gutter * 4) ($gutter * 2);
+      @include tablet-mobile {
+        height: auto;
+      }
     }
 
     &__title {
       color: $main-gray;
+      padding: ($gutter * 2) ($gutter * 4);
+      text-align: left;
+      text-transform: uppercase;
     }
   }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 body {
   background-color: $main-color;

@@ -4,26 +4,39 @@
     margin: 0 auto;
     padding: ($gutter * 4) 0;
 
-    input {
-        width: 30%;
-        display: inline-block;
-        margin-right: $gutter * 2;
-        padding: $gutter;
-        border: none;
-        border-bottom: 1px solid $main-color;
-        background-color: transparent;
-        color: white;
-    
-        &:focus {
-            outline: none;
+    form {
+        @include mobile-only {
+            position: relative;
         }
 
-        &:-internal-autofill-selected {
-            background-color: transparent !important;
+        input {
+            width: 30%;
+            display: inline-block;
+            margin-right: $gutter * 2;
+            padding: $gutter;
+            border: none;
+            border-bottom: 1px solid $main-color;
+            background-color: transparent;
             color: white;
-        }
     
+            @include mobile-only {
+                width: 80%;
+                display: block;
+                margin-bottom: $gutter;
+            }
+        
+            &:focus {
+                outline: none;
+            }
+    
+            &:-internal-autofill-selected {
+                background-color: transparent !important;
+                color: white;
+            }
+        
+        }
     }
+
 
     .submit-search {
         padding: 0;
@@ -32,6 +45,12 @@
         font-size: 18px;
         color: $second-color;
         cursor: pointer;
+
+        @include mobile-only {
+            position: absolute;
+            right: 0;
+            top: 50px;
+        }
 
         &:hover {
             transform: scale(1.5);
