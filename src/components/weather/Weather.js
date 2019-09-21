@@ -1,12 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { FormattedDate, IntlProvider, FormattedTime } from "react-intl"
 import './Weather.scss'
-import $ from 'jquery'
-
+import Loader from '../loader/Loader'
 import Carousel from "@brainhubeu/react-carousel"
 import "@brainhubeu/react-carousel/lib/style.css"
 
-$("li:empty").remove();
 export default class Weather extends Component {
 
 
@@ -17,7 +15,12 @@ export default class Weather extends Component {
 
           <IntlProvider locale={navigator.language}>
             <div className="weather">
-              { this.props.currentData &&
+
+              { !this.props.currentData && !this.props.data && !this.props.error && !this.props.errorTip && this.props.loading &&
+                <Loader/>
+              }
+
+              { this.props.currentData && !this.props.error &&
                 <div>
                   <h4 className="weather__city">{this.props.currentData.name}, {this.props.currentData.sys.country}</h4>
                   <img className="weather__icon" src = {`http://openweathermap.org/img/w/${this.props.currentData.weather[0].icon}.png`} alt="weather_icon"/>
@@ -26,7 +29,7 @@ export default class Weather extends Component {
                   <p>{this.props.currentData.weather[0].description}</p>
                 </div>
               }
-              { this.props.data &&
+              { this.props.data && !this.props.error &&
 
 
               <div>
@@ -71,6 +74,13 @@ export default class Weather extends Component {
                 </Carousel>
               </div>
               
+              }
+              {
+                this.props.error && !this.props.data && !this.props.dataList &&
+                  <div>
+                    <p>{this.props.error}</p>
+                    <p>{this.props.errorTip}</p>
+                  </div>
               }
             </div>
           </IntlProvider>

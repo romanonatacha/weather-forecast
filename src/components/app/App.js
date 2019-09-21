@@ -10,11 +10,18 @@ export default class App extends Component {
 
   state = {
     data: undefined,
-    dataList: []
+    dataList: [],
+    error: undefined,
+    errorTip: undefined,
+    loading: true
 }
 
 getWeather = async (e) => {
   e.preventDefault();
+
+  this.setState({
+    loading: true
+  })
 
   let city = e.target.elements.city.value
 
@@ -26,31 +33,23 @@ getWeather = async (e) => {
   //Convert the api data to Json format to a readable format
   const data = await api_forecast.json()
   const currentData = await api_weather.json()
-  
-  // If the error code is 404, set State to error message else if the city and country exists run the code 
-
-  console.log(data);
-  console.log(currentData);
 
 
   if (data.cod === '404' || currentData.cod === '404') {
       this.setState({
-          error: 'Invalid Entry (Not Found)'
+          data: undefined,
+          dataList: undefined,
+          error: 'The city was not found.',
+          errorTip: 'Make sure you typed it correctly and in English.'
       })
+      
   } else if (city && country) {
 
       this.setState({
           data: data,
           dataList: data.list,
-          currentData: currentData
-          // tempMin: data.list.main.temp_min,
-          // tempMax: data.list.main.temp_max,
-          // city: data.city.name,
-          // country: data.city.country,
-          // humidity: data.list.main.humidity,
-          // description: data.list.weather[0].description,
-          // icon: data.list.weather[0].icon,
-          // error: null
+          currentData: currentData,
+          error: undefined
       })
   console.log(data);
 
@@ -72,6 +71,9 @@ getWeather = async (e) => {
             data={this.state.data}
             dataList={this.state.dataList}
             currentData={this.state.currentData}
+            error={this.state.error}
+            errorTip={this.state.errorTip}
+            loading={this.state.loading}
           />
           {/* <Capitals/> */}
         </div>
