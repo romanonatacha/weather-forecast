@@ -78,6 +78,7 @@ export default class Weather extends Component {
               {
                 this.props.error && !this.props.data && !this.props.dataList &&
                   <div>
+                    <i className="icon fa fa-exclamation-triangle"></i>
                     <p>{this.props.error}</p>
                     <p>{this.props.errorTip}</p>
                   </div>

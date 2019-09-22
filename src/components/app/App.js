@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.scss'
-import Search from '../search/Search';
-import Capitals from '../capitals/Capitals'
+import Search from '../search/Search'
 import Weather from '../weather/Weather'
 import Footer from '../footer/Footer'
 
@@ -82,7 +81,6 @@ getWeather = async (e) => {
             errorTip={this.state.errorTip}
             loading={this.state.loading}
           />
-          {/* <Capitals/> */}
         </div>
         <Footer />
       </div>
