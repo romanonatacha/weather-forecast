@@ -16,7 +16,7 @@ export default class Weather extends Component {
           <IntlProvider locale={navigator.language}>
             <div className="weather">
 
-              { !this.props.currentData && !this.props.data && !this.props.error && !this.props.errorTip && this.props.loading &&
+              { !this.props.currentData && !this.props.data && !this.props.dataList && !this.props.error && !this.props.errorTip && this.props.loading &&
                 <Loader/>
               }
 

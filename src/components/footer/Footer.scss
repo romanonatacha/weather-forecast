@@ -1,0 +1,18 @@
+@import '../../variables.scss';
+
+.footer {
+    font-weight: 100;
+    font-size: 14px;
+    padding: $gutter * 2;
+    clear: both;
+
+    a {
+        color: $main-gray;
+        text-decoration: none;
+
+        &:hover, &:focus, &:active {
+            font-weight: 400;
+            text-decoration: underline;
+        }
+    }
+}

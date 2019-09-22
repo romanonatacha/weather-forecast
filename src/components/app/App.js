@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './App.scss'
 import Search from '../search/Search';
 import Capitals from '../capitals/Capitals'
-import Weather from '../weather/Weather';
+import Weather from '../weather/Weather'
+import Footer from '../footer/Footer'
 
 const API_KEY = '051f55950afd406c29fef8724b3ca520'
 
@@ -11,6 +12,7 @@ export default class App extends Component {
   state = {
     data: undefined,
     dataList: [],
+    currentData: undefined,
     error: undefined,
     errorTip: undefined,
     loading: false
@@ -20,7 +22,12 @@ getWeather = async (e) => {
   e.preventDefault();
 
   this.setState({
-    loading: true
+    loading: true,
+    data: undefined,
+    dataList: undefined,
+    currentData: undefined,
+    error: undefined,
+    errorTip: undefined
   })
 
   let city = e.target.elements.city.value
@@ -77,6 +84,7 @@ getWeather = async (e) => {
           />
           {/* <Capitals/> */}
         </div>
+        <Footer />
       </div>
     )
   }
