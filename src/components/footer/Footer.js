@@ -7,7 +7,7 @@ export default class Loader extends Component {
         return (
             <div className="footer">
                 <p>
-                    <a href="https://www.linkedin.com/in/natacha-romano/" target="_blank">
+                    <a href="https://www.linkedin.com/in/natacha-romano/" target="_blank" rel="noopener noreferrer">
                         Developed by Natacha Romano ©
                     </a>
                 </p>  
