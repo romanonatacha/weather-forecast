@@ -57,8 +57,7 @@ getWeather = async (e) => {
           currentData: currentData,
           error: undefined
       })
-  console.log(data);
-
+      
   }
 }
 
